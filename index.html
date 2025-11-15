@@ -450,7 +450,7 @@
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin-top: 40px;
         }
@@ -489,7 +489,7 @@
         }
 
         .stat-card h4 {
-            font-size: 30px;
+            font-size: 16px;
             background: linear-gradient(135deg, var(--electric-cyan), var(--vibrant-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -500,8 +500,11 @@
 
         .stat-card p {
             color: var(--light-gray);
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 600;
+            justify-content: center;
+            align-items: center;
+            display: flex;
         }
 
         /* Skills Section */
@@ -791,31 +794,62 @@
             font-size: 15px;
         }
 
-        /* Responsive */
+      /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 52px; }
-            .hero h2 { font-size: 22px; }
-            .about-content { grid-template-columns: 1fr; gap: 50px; }
-            .stats { grid-template-columns: 1fr; }
-            .section-title { font-size: 40px; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .hero-logo { width: 180px; height: 180px; }
+            .hero h1 { font-size: 42px; }
+            .hero h2 { font-size: 18px; }
+            .hero p { font-size: 16px; }
+            .about-content { grid-template-columns: 1fr; gap: 40px; }
+            .stats { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .stat-card { padding: 15px; }
+            .stat-card h4 { font-size: 18px; }
+            .stat-card p { font-size: 10px; }
+            .section-title { font-size: 36px; margin-bottom: 50px; }
+            .projects-grid { grid-template-columns: 1fr; gap: 25px; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .skill-card { padding: 25px 20px; }
+            .skill-icon { font-size: 40px; margin-bottom: 15px; }
+            .skill-card h3 { font-size: 18px; margin-bottom: 8px; }
+            .skill-card p { font-size: 13px; }
+            .hero-logo { width: 150px; height: 150px; }
+            .about-image { max-width: 100%; }
+            .about-text h3 { font-size: 28px; margin-bottom: 20px; }
+            .about-text p { font-size: 16px; margin-bottom: 20px; }
+            .project-card { border-radius: 20px; }
+            .project-image { height: 140px; padding: 15px; }
+            .project-image img { max-width: 100px; max-height: 100px; }
+            .project-content { padding: 20px; }
+            .project-content h3 { font-size: 20px; margin-bottom: 12px; }
+            .project-content p { font-size: 13px; line-height: 1.6; margin-bottom: 15px; }
+            .tech-tags { gap: 8px; margin-bottom: 20px; }
+            .tech-tag { padding: 5px 12px; font-size: 11px; }
+            .project-links { gap: 15px; }
+            .project-links a { font-size: 14px; }
+            .btn { padding: 14px 30px; font-size: 14px; }
+            .cta-buttons { gap: 15px; }
+            section { padding: 80px 0; }
+            .contact p { font-size: 16px; margin-bottom: 40px; }
+            .social-link { width: 60px; height: 60px; font-size: 24px; }
             
             .mobile-menu-toggle {
                 display: flex;
             }
             
+            .logo {
+                font-size: 24px;
+            }
+            
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 right: -100%;
                 width: 280px;
-                height: calc(100vh - 80px);
+                height: 100vh;
                 background: rgba(10, 14, 39, 0.98);
                 backdrop-filter: blur(20px);
                 flex-direction: column;
                 gap: 0;
-                padding: 40px 0;
+                padding: 100px 0 40px;
                 border-left: 2px solid rgba(0, 217, 255, 0.2);
                 transition: right 0.4s ease;
                 box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
@@ -827,13 +861,20 @@
             
             .nav-links li {
                 width: 100%;
+                display: flex;
+                align-items: center;
+            }
+            
+            .nav-links li i {
+                margin-left: 40px;
             }
             
             .nav-links a {
                 display: block;
-                padding: 20px 40px;
+                padding: 20px 15px 20px 10px;
                 font-size: 18px;
                 border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+                flex: 1;
             }
             
             .nav-links a::before {
@@ -842,9 +883,21 @@
             
             .nav-links a:hover {
                 background: rgba(0, 217, 255, 0.1);
-                padding-left: 50px;
+                padding-left: 20px;
             }
         }
+        
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 36px; }
+            .hero h2 { font-size: 16px; }
+            .section-title { font-size: 30px; }
+            .stats { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .hero-logo { width: 130px; height: 130px; }
+            .about-text h3 { font-size: 24px; }
+            .about-text p { font-size: 15px; }
+        }
+
     </style>
 </head>
 <body>
@@ -884,7 +937,7 @@
             <h2 data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                 <span class="typing-effect">Web Developer | Django | Frontend</span>
             </h2>
-            <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">Code. Create. Launch. 🚀</p>
+            <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">Code. Create. Launch.</p>
             <div class="cta-buttons" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -922,7 +975,11 @@
                         </div>
                         <div class="stat-card" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
                             <h4>10+</h4>
-                            <p>Technologies</p>
+                            <p>Technologies Used</p>
+                        </div>
+                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
+                            <h4>1000+</h4>
+                            <p>Hours Coded</p>
                         </div>
                     </div>
                 </div>
